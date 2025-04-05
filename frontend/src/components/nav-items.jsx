@@ -14,34 +14,28 @@ import {
 
 const navItems = [
   {
-    title: "Medicine",
-    href: "#medicines",
-    children: [
-      {
-        title: "Pain relief",
-        href: "#",
-      },
-      {
-        title: "Cold & Flu",
-        href: "#",
-      },
-      {
-        title: "Digestive Health",
-      },
-      {
-        title: "Allergy Relief",
-        href: "#",
-      },
-      {
-        title:"Skin Care",
-        href: "#",
-      },
-      {
-        title:"Vitamins & Supplement",
-        href: "#",
-      },
-      
-    ],
+    title: "Pain Relief",
+    href:"#",
+  },
+  {
+    title: "Digestive Health",
+    href:"#",
+  },
+  {
+    title: "Cold & Flu",
+    href:"#",
+  },
+  {
+    title: "Vitamins & Supplements",
+    href:"#",
+  },
+  {
+    title: "Allergy Relief",
+    href:"#",
+  },
+  {
+    title: "Sexual Wellness",
+    href:"#",
   },
   // {title: }
 ];
@@ -58,14 +52,14 @@ export function NavigationMenuItems() {
                 <ul className="w-[350px] grid gap-3 p-4 md:grid-cols-2">
                   {Array.isArray(item.children)
                     ? item?.children.map((component) => (
-                        <ListItem
-                          key={component.title}
-                          title={component.title}
-                          href={component.href}
-                        >
-                          {component.description}
-                        </ListItem>
-                      ))
+                      <ListItem
+                        key={component.title}
+                        title={component.title}
+                        href={component.href}
+                      >
+                        {component.description}
+                      </ListItem>
+                    ))
                     : null}
                 </ul>
               </NavigationMenuContent>
