@@ -16,10 +16,31 @@ const navItems = [
   {
     title: "Pain Relief",
     href:"#",
+    children:
+    [
+      {title: "Headache & Migraine Relief", href:"#"},
+      {title: "Muscle & Joint Pain", href:"#"},
+      {title: "Back Pain", href:"#"},
+      {title: "Nerve Pain", href:"#"},
+      {title: "Arthritis & Inflammation", href:"#"},
+    ]
   },
   {
     title: "Digestive Health",
     href:"#",
+    children:
+    [
+      {title:"Acidity & Heartburn Relief", href:"#"},
+      {title:"Constipation Relief", href:"#"},
+      {title:"Diarrhea Control", href:"#"},
+      {title:"Gas & Bloating Relief", href:"#"},
+      {title:"Indigestion & Stomach Pain", href:"#"},
+      {title:"Nausea & Vomiting", href:"#"},
+      {title:"Gallstone Dissolution", href:"#"},
+      {title:"Irritable Bowel Syndrome ", href:"#"},
+      {title:"Fast Acting", href:"#"},
+
+    ]
   },
   {
     title: "Cold & Flu",
@@ -36,7 +57,11 @@ const navItems = [
   {
     title: "Sexual Wellness",
     href:"#",
-  },
+  }, 
+  {
+    title: "Surgical Equipment",
+    href:"#",
+  }
   // {title: }
 ];
 
