@@ -90,7 +90,7 @@ export function NavigationMenuItems() {
               </NavigationMenuContent>
             </NavigationMenuItem>
           ) : (
-            <NavigationMenuItem>
+            <NavigationMenuItem  key={index}>
               <Link href={item.href} legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                   {item.title}
