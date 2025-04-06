@@ -45,10 +45,30 @@ const navItems = [
   {
     title: "Cold & Flu",
     href:"#",
+    children:
+    [
+      {title:"Fever & Body Aches Relief", href:"#"},
+      {title:"Stuffy Nose & Nasal Congestion", href:"#"},
+      {title:"Runny Nose & Sneezing", href:"#"},
+      {title:"Cough Relief", href:"#"},
+      {title:"Sore Throat", href:"#"},
+      {title:"Quick Relief ", href:"#"},
+    ]
   },
   {
     title: "Vitamins & Supplements",
     href:"#",
+    children: 
+    [
+      {title: "Multivitamins ", href:"#"},
+      {title: "Energy & Vitality", href:"#"},
+      {title: "Brain & Cognitive Function", href:"#"},
+      {title: "Digestive Health", href:"#"},
+      {title: "Heart Health", href:"#"},
+      {title: "Immune Support", href:"#"},
+      {title: "Bone & Joint Health", href:"#"},
+      {title: "Stress & Relaxation", href:"#"},
+    ]
   },
   {
     title: "Allergy Relief",

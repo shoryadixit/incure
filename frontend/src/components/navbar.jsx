@@ -16,7 +16,7 @@ export default function Navbar() {
     <nav className="flex items-center justify-between p-4">
       <div className="text-xl font-bold flex items-center space-x-1 text-primary underline underline-offset-4">
         <BsCapsulePill className="drop-shadow-2xl" />
-        <span>inCure</span>
+        <span>INcure</span>
       </div>
       <div className="flex items-center space-x-4">
         <NavigationMenuItems />
@@ -31,7 +31,7 @@ export default function Navbar() {
               </Button>
             </TooltipTrigger>
             <TooltipContent>
-              <p>Add to library</p>
+              <p>Order Now</p>
             </TooltipContent>
           </Tooltip>
         </TooltipProvider>
