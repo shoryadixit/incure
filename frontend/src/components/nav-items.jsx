@@ -15,102 +15,119 @@ import {
 const navItems = [
   {
     title: "Pain Relief",
-    href:"#",
-    children:
-    [
-      {title: "Headache & Migraine Relief", href:"#"},
-      {title: "Muscle & Joint Pain", href:"#"},
-      {title: "Back Pain", href:"#"},
-      {title: "Nerve Pain", href:"#"},
-      {title: "Arthritis & Inflammation", href:"#"},
-    ]
+    href: "#",
+    children: [
+      { title: "Headache & Migraine Relief", href: "#" },
+      { title: "Muscle & Joint Pain", href: "#" },
+      { title: "Back Pain", href: "#" },
+      { title: "Nerve Pain", href: "#" },
+      { title: "Arthritis & Inflammation", href: "#" },
+    ],
   },
   {
     title: "Digestive Health",
-    href:"#",
-    children:
-    [
-      {title:"Acidity & Heartburn Relief", href:"#"},
-      {title:"Constipation Relief", href:"#"},
-      {title:"Diarrhea Control", href:"#"},
-      {title:"Gas & Bloating Relief", href:"#"},
-      {title:"Indigestion & Stomach Pain", href:"#"},
-      {title:"Nausea & Vomiting", href:"#"},
-      {title:"Gallstone Dissolution", href:"#"},
-      {title:"Irritable Bowel Syndrome ", href:"#"},
-      {title:"Fast Acting", href:"#"},
-
-    ]
+    href: "#",
+    children: [
+      { title: "Acidity & Heartburn Relief", href: "#" },
+      { title: "Constipation Relief", href: "#" },
+      { title: "Diarrhea Control", href: "#" },
+      { title: "Gas & Bloating Relief", href: "#" },
+      { title: "Indigestion & Stomach Pain", href: "#" },
+      { title: "Nausea & Vomiting", href: "#" },
+      { title: "Gallstone Dissolution", href: "#" },
+      { title: "Irritable Bowel Syndrome ", href: "#" },
+      { title: "Fast Acting", href: "#" },
+    ],
   },
   {
     title: "Cold & Flu",
-    href:"#",
-    children:
-    [
-      {title:"Fever & Body Aches Relief", href:"#"},
-      {title:"Stuffy Nose & Nasal Congestion", href:"#"},
-      {title:"Runny Nose & Sneezing", href:"#"},
-      {title:"Cough Relief", href:"#"},
-      {title:"Sore Throat", href:"#"},
-      {title:"Quick Relief ", href:"#"},
-    ]
+    href: "#",
+    children: [
+      { title: "Fever & Body Aches Relief", href: "#" },
+      { title: "Stuffy Nose & Nasal Congestion", href: "#" },
+      { title: "Runny Nose & Sneezing", href: "#" },
+      { title: "Cough Relief", href: "#" },
+      { title: "Sore Throat", href: "#" },
+      { title: "Quick Relief ", href: "#" },
+    ],
   },
   {
     title: "Vitamins & Supplements",
-    href:"#",
-    children: 
-    [
-      {title: "Multivitamins ", href:"#"},
-      {title: "Energy & Vitality", href:"#"},
-      {title: "Brain & Cognitive Function", href:"#"},
-      {title: "Digestive Health", href:"#"},
-      {title: "Heart Health", href:"#"},
-      {title: "Immune Support", href:"#"},
-      {title: "Bone & Joint Health", href:"#"},
-      {title: "Stress & Relaxation", href:"#"},
-    ]
+    href: "#",
+    children: [
+      { title: "Multivitamins ", href: "#" },
+      { title: "Energy & Vitality", href: "#" },
+      { title: "Brain & Cognitive Function", href: "#" },
+      { title: "Digestive Health", href: "#" },
+      { title: "Heart Health", href: "#" },
+      { title: "Immune Support", href: "#" },
+      { title: "Bone & Joint Health", href: "#" },
+      { title: "Stress & Relaxation", href: "#" },
+    ],
   },
   {
     title: "Allergy Relief",
-    href:"#",
+    href: "#",
   },
   {
     title: "Sexual Wellness",
-    href:"#",
-  }, 
+    href: "#",
+  },
   {
     title: "Surgical Equipment",
-    href:"#",
-  }
-  // {title: }
+    href: "#",
+  },
 ];
+
+// const navItems = [
+//   {
+//     title: "Blog",
+//     href: "#blog",
+//   },
+//   {
+//     title: "Features",
+//     href: "#features",
+//   },
+//   {
+//     title: "Testimonials",
+//     href: "#testimonials",
+//   },
+//   {
+//     title: "Contact Us",
+//     href: "#contact",
+//   },
+//   {
+//     title: "About Us",
+//     href: "#about-us",
+//   },
+// ];
 
 export function NavigationMenuItems() {
   return (
     <NavigationMenu>
-      <NavigationMenuList>
+      <NavigationMenuList className={"flex-wrap"}>
         {navItems.map((item, index) =>
           item.children ? (
             <NavigationMenuItem key={index}>
               <NavigationMenuTrigger>{item.title}</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="w-[350px] grid gap-3 p-4 md:grid-cols-2">
+              <NavigationMenuContent className={"w-full min-w-lg max-w-lg"}>
+                <ul className="grid gap-3 p-4 md:grid-cols-2">
                   {Array.isArray(item.children)
                     ? item?.children.map((component) => (
-                      <ListItem
-                        key={component.title}
-                        title={component.title}
-                        href={component.href}
-                      >
-                        {component.description}
-                      </ListItem>
-                    ))
+                        <ListItem
+                          key={component.title}
+                          title={component.title}
+                          href={component.href}
+                        >
+                          {component.description}
+                        </ListItem>
+                      ))
                     : null}
                 </ul>
               </NavigationMenuContent>
             </NavigationMenuItem>
           ) : (
-            <NavigationMenuItem  key={index}>
+            <NavigationMenuItem key={index}>
               <Link href={item.href} legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                   {item.title}
