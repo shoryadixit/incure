@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "motion/react";
 import Link from "next/link";
 import Image from "next/image";
+import { ChevronDown } from "lucide-react";
 
 const transition = {
   type: "spring",
@@ -21,6 +22,7 @@ export const MenuItem = ({ setActive, active, item, children, isChildren }) => {
         className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white "
       >
         {item}
+        {isChildren && <ChevronDown className="inline-block ml-2 w-4 h-4" />}
       </motion.p>
       {active !== null && (
         <motion.div
