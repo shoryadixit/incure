@@ -15,7 +15,7 @@ import { FaLocationDot } from "react-icons/fa6";
 export default function WhyChooseIncure() {
   const content = [
     {
-      title: "Collaborative Editing",
+      title: "Ultra-Fast Delivery – Medicines delivered in minutes",
       description:
         "Work together in real time with your team, clients, and stakeholders. Collaborate on documents, share ideas, and make decisions quickly. With our platform, you can streamline your workflow and increase productivity.",
       content: (
@@ -25,7 +25,7 @@ export default function WhyChooseIncure() {
       ),
     },
     {
-      title: "Real time changes",
+      title: "100% Authentic Medicines – Sourced from verified pharmacies",
       description:
         "See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.",
       content: (
@@ -41,7 +41,7 @@ export default function WhyChooseIncure() {
       ),
     },
     {
-      title: "Version control",
+      title: "Easy Prescription Upload – Hassle-free ordering",
       description:
         "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
       content: (
@@ -51,7 +51,7 @@ export default function WhyChooseIncure() {
       ),
     },
     {
-      title: "Running out of content",
+      title: "24/7 Support – Always available customer service",
       description:
         "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
       content: (
@@ -84,9 +84,9 @@ export default function WhyChooseIncure() {
   ];
 
   return (
-    <section className="py-20 px-10 flex flex-col items-center justify-center gap-10">
+    <section className=" flex flex-col items-center justify-center gap-20 pt-20">
       <div>
-        <h1 className="text-2xl font-bold text-center">Why Choose Incure?</h1>
+        <h1 className="text-3xl font-bold text-center">Why Choose Incure?</h1>
         <p className="text-md text-center">
           We are committed to providing the best service possible
         </p>
@@ -101,7 +101,7 @@ export default function WhyChooseIncure() {
             </CardHeader>
           </Card>
         ))} */}
-        <div className="w-full py-4 relative">
+        <div className="w-full relative">
           <StickyScroll content={content} />
         </div>
       </div>

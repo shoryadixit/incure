@@ -112,8 +112,8 @@ export default function Navbar() {
 
   return (
     <nav
-      className={` w-full flex gap-5 sm:gap-0 items-center justify-between p-4 z-50 transition-all ease-in-out duration-500 ${
-        isScrolled && "bg-primary-foreground"
+      className={`fixed w-full flex gap-5 sm:gap-0 items-center justify-between p-4 z-50 transition-all ease-in-out duration-500 ${
+        isScrolled ? "bg-primary-foreground" : ""
       }`}
     >
       <div className="text-xl font-bold flex items-center space-x-1 text-primary underline underline-offset-4">

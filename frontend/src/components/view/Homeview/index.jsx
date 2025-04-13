@@ -8,8 +8,10 @@ import UploadFileSection from "./upload-file-section";
 import WhyChooseIncure from "./why-choose-incure";
 import { BsWhatsapp } from "react-icons/bs";
 import { FeaturesSectionDemo } from "@/components/ui/bento-grid";
+import { motion } from "motion/react";
 
 export default function HomeView() {
+  const ButtonMotion = motion.create(Button);
   const testimonials = [
     {
       quote:
@@ -50,14 +52,13 @@ export default function HomeView() {
   return (
     <>
       <BannerSection />
-      {/* <section className="flex items-center justify-center p-5 sm:p-20">
+      <section className="flex items-center justify-center p-5 sm:p-20">
         <UploadFileSection />
-      </section> */}
+      </section>
       <HowItWorksSection />
       <WhyChooseIncure />
       <section className="flex items-center justify-center bg-primary-foreground/40">
-        {/* <AnimatedTestimonials testimonials={testimonials} autoplay /> */}
-        <FeaturesSectionDemo />
+        <AnimatedTestimonials testimonials={testimonials} autoplay />
       </section>
       <section className="flex flex-col items-center justify-center bg-primary/20 py-20 px-10 gap-8">
         <div className="flex flex-col items-center justify-center gap-2">
@@ -69,10 +70,14 @@ export default function HomeView() {
             free medicines delivery
           </p>
         </div>
-        <Button size={"lg"} className={"rounded-full"}>
+        <ButtonMotion
+          whileHover={{ y: -4, transition: { duration: 0.2 } }}
+          size={"lg"}
+          className={"rounded-full"}
+        >
           <BsWhatsapp />
           Order via WhatsApp
-        </Button>
+        </ButtonMotion>
       </section>
     </>
   );
