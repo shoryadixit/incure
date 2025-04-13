@@ -9,7 +9,7 @@ export default function HowItWorksSection() {
   const options = [
     {
       id: 1,
-      icon: <CloudUpload size={35} className="text-blue-600" />,
+      icon: <CloudUpload size={35} className="text-primary" />,
       title: "Upload Prescription",
       description: "Upload your prescription through our secure platofrm",
     },
@@ -21,20 +21,20 @@ export default function HowItWorksSection() {
     },
     {
       id: 3,
-      icon: <BsCreditCard size={35} className="text-blue-600" />,
+      icon: <BsCreditCard size={35} className="text-primary" />,
       title: "Confirm & Pay",
       description: "Recieve confirmation and complete secure payment",
     },
     {
       id: 4,
-      icon: <TbTruckDelivery size={35} className="text-blue-600" />,
+      icon: <TbTruckDelivery size={35} className="text-primary" />,
       title: "Fast Delivery",
       description: "Get your medicines delivered to your doorstep",
     },
   ];
 
   return (
-    <section className="flex flex-col items-center justify-between gap-8 bg-secondary/40 text-center py-20 px-10">
+    <section className="flex flex-col items-center justify-between gap-8 bg-primary-foreground/20 text-center py-20 px-10">
       <div className="space-y-2">
         <h1 className="text-2xl font-bold">How It Works</h1>
         <p className="text-md">
@@ -44,11 +44,9 @@ export default function HowItWorksSection() {
       <div className="flex items-center w-full justify-evenly flex-wrap gap-10">
         {options.map((item, index) => (
           <div key={item.id}>
-            <div className="w-[250px] flex flex-col items-center justify-between gap-5">
-              <div className="bg-white p-4 rounded-full shadow-xl">
-                {item.icon}
-              </div>
-              <div className="flex flex-col gap-2">
+            <div className="w-[300px] flex flex-col items-start justify-between gap-5 bg-primary-foreground/40 p-6 rounded-2xl">
+              <div className="bg-primary-foreground/70 p-4 rounded-none">{item.icon}</div>
+              <div className="flex flex-col gap-2 text-start">
                 <h2 className="text-lg font-bold">{item.title}</h2>
                 <p className="text-md">{item.description}</p>
               </div>

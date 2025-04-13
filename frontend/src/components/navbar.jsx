@@ -12,8 +12,8 @@ import {
 } from "./ui/tooltip";
 import { cn } from "@/lib/utils";
 import { HoveredLink, Menu, MenuItem, ProductItem } from "./new-nav";
-import { useState } from "react";
-import { MenuIcon } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Dot, MenuIcon } from "lucide-react";
 import {
   Sheet,
   SheetContent,
@@ -92,15 +92,38 @@ export default function Navbar() {
       href: "#",
     },
   ];
+
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  const handleScroll = () => {
+    if (window.scrollY > 100) {
+      setIsScrolled(true);
+    } else {
+      setIsScrolled(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className="flex gap-5 sm:gap-0 items-center justify-between p-4">
+    <nav
+      className={` w-full flex gap-5 sm:gap-0 items-center justify-between p-4 z-50 transition-all ease-in-out duration-500 ${
+        isScrolled && "bg-primary-foreground"
+      }`}
+    >
       <div className="text-xl font-bold flex items-center space-x-1 text-primary underline underline-offset-4">
         <BsCapsulePill className="drop-shadow-2xl" />
         <span>INcure</span>
       </div>
+
       <div className="flex items-start sm:items-center space-x-4">
         {/* <NavigationMenuItems /> */}
-        <div className={cn(" top-0 inset-x-0 mx-auto z-50 hidden md:block")}>
+        <div className={cn("top-0 inset-x-0 mx-auto z-50 hidden md:block")}>
           <Menu setActive={setActive}>
             {navItems.map((item, index) => (
               <MenuItem
@@ -110,47 +133,25 @@ export default function Navbar() {
                 isChildren={item.children || false}
                 item={item.title}
               >
-                <div className="flex flex-col space-y-4 text-sm">
+                <div className="flex flex-col space-y-1 text-sm">
                   {item?.children?.map((child, index) => (
-                    <HoveredLink href={child.href}>{child.title}</HoveredLink>
+                    <HoveredLink
+                      key={index}
+                      href={child.href}
+                      className="hover:text-white"
+                    >
+                      {child.title}
+                    </HoveredLink>
                   ))}
                 </div>
               </MenuItem>
             ))}
-
-            {/* <MenuItem setActive={setActive} active={active} item="Products">
-              <div className="  text-sm </Button>grid grid-cols-2 gap-10 p-4">
-                <ProductItem
-                  title="Algochurn"
-                  href="https://algochurn.com"
-                  src="https://assets.aceternity.com/demos/algochurn.webp"
-                  description="Prepare for tech interviews like never before."
-    </Button>            />
-                <ProductItem
-                  title="Tailwind Master Kit"
-                  href="https://tailwindmasterkit.com"
-                  src="https://assets.aceternity.com/demos/tailwindmasterkit.webp"
-                  description="Production ready Tailwind css components for your next project"
-                />
-                <ProductItem
-                  title="Moonbeam"
-                  href="https://gomoonbeam.com"
-                  src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
-                  description="Never write from scratch again. Go from idea to blog in minutes."
-                />
-                <ProductItem
-                  title="Rogue"
-                  href="https://userogue.com"
-                  src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.47.07%E2%80%AFPM.png"
-                  description="Respond to government RFPs, RFIs and RFQs 10x faster using AI"
-                />
-              </div>
-            </MenuItem> */}
           </Menu>
         </div>
       </div>
+
       <div className="space-x-2">
-        <ModeToggle />
+        {/* <ModeToggle /> */}
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger asChild>

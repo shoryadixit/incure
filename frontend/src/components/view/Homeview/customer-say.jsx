@@ -40,7 +40,7 @@ export const AnimatedTestimonials = ({ testimonials, autoplay = false }) => {
                 <motion.div
                   key={testimonial.src}
                   initial={{
-                    opacity: 0,
+                    opacity: "0",
                     scale: 0.9,
                     z: -100,
                     rotate: randomRotateY(),
