@@ -9,6 +9,7 @@ import WhyChooseIncure from "./why-choose-incure";
 import { BsWhatsapp } from "react-icons/bs";
 import { FeaturesSectionDemo } from "@/components/ui/bento-grid";
 import { motion } from "motion/react";
+import FaqSection from "./faq-section";
 
 export default function HomeView() {
   const ButtonMotion = motion.create(Button);
@@ -60,7 +61,7 @@ export default function HomeView() {
       <section className="flex items-center justify-center bg-primary-foreground/40">
         <AnimatedTestimonials testimonials={testimonials} autoplay />
       </section>
-      <section className="flex flex-col items-center justify-center bg-primary/20 py-20 px-10 gap-8">
+      <section className="flex flex-col items-center justify-center bg-primary-foreground/20 py-20 px-10 gap-8">
         <div className="flex flex-col items-center justify-center gap-2">
           <h1 className="text-2xl font-bold text-center">
             Ready to order your medicines
@@ -79,6 +80,7 @@ export default function HomeView() {
           Order via WhatsApp
         </ButtonMotion>
       </section>
+      <FaqSection />
     </>
   );
 }
