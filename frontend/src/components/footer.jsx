@@ -4,7 +4,7 @@ import { BackgroundBeams } from "./ui/background-beams";
 export default function Footer() {
   return (
     <footer className="relative antialiased text-gray-300 py-10 px-6 bg-neutral-950">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-8">
         <div>
           <div className="flex items-center space-x-2">
             <div className="bg-green-500 p-2 rounded-full">
@@ -22,17 +22,53 @@ export default function Footer() {
           <ul className="space-y-2 text-sm">
             <li>
               <Link href="#" className="hover:text-white">
-                About Us
+                Home
               </Link>
             </li>
             <li>
               <Link href="#" className="hover:text-white">
-                Services
+                Browser Medicines
               </Link>
             </li>
             <li>
               <Link href="#" className="hover:text-white">
-                Contact
+                How It Works
+              </Link>
+            </li>
+            <li>
+              <Link href="#" className="hover:text-white">
+                FAQs
+              </Link>
+            </li>
+            <li>
+              <Link href="#" className="hover:text-white">
+                Contact Us
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 className="text-white font-semibold mb-4">Delivery & Support</h4>
+          <ul className="space-y-2 text-sm">
+            <li>
+              <Link href="#" className="hover:text-white">
+                Fast & Secure Delivery
+              </Link>
+            </li>
+            <li>
+              <Link href="#" className="hover:text-white">
+                Order via WhatsApp
+              </Link>
+            </li>
+            <li>
+              <Link href="#" className="hover:text-white">
+                Payment Methods
+              </Link>
+            </li>
+            <li>
+              <Link href="#" className="hover:text-white">
+                Service Areas
               </Link>
             </li>
           </ul>
@@ -51,11 +87,16 @@ export default function Footer() {
                 Terms of Service
               </Link>
             </li>
+            <li>
+              <Link href="#" className="hover:text-white">
+                Refund & Cancellation Policy
+              </Link>
+            </li>
           </ul>
         </div>
 
         <div>
-          <h4 className="text-white font-semibold mb-4">Emergency Contact</h4>
+          <h4 className="text-white font-semibold mb-4">Contact Us</h4>
           <p className="text-green-400 font-semibold text-lg mb-4">
             1-800-MEDIDOOR
           </p>
@@ -74,7 +115,7 @@ export default function Footer() {
       </div>
 
       <div className="mt-10 border-t border-gray-700 pt-6 flex justify-between items-center text-sm text-gray-500">
-        <p>© 2025 MediDoor. All rights reserved.</p>
+        <p>© 2025 INcure. All rights reserved.</p>
 
         <Link
           href="https://wa.me/1234567890"
