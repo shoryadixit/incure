@@ -52,9 +52,9 @@ export default function HomeView() {
   return (
     <>
       <BannerSection />
-      <section className="flex items-center justify-center p-5 sm:p-20">
+      {/* <section className="flex items-center justify-center p-5 sm:p-20">
         <UploadFileSection />
-      </section>
+      </section> */}
       <HowItWorksSection />
       <WhyChooseIncure />
       <section className="flex items-center justify-center bg-primary-foreground/40">
