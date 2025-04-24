@@ -198,10 +198,10 @@ export default function BannerSection() {
         </div>
       </div>
 
-      <div className="w-20 h-20 group group-hover:w-full group-hover:h-fit fixed bottom-4 sm:left-4 bg-white p-4 rounded-lg shadow-lg max-w-xs md:max-w-md z-50">
+      <div className={`${location ? "w-10 h-10" : ""} overflow-hidden group hover:w-full transition-all ease-in-out duration-700 hover:h-[120px] sm:hover:h-[110px] fixed bottom-4 sm:left-4 bg-white p-4 rounded-lg shadow-lg max-w-xs md:max-w-md z-50`}>
         {location ? (
           <div className="flex flex-col gap-2">
-            <h3 className="font-semibold">
+            <h3 className="font-semibold flex items-center justify-center">
               📍{" "}
               <span className="group-hover:block hidden delay-300 duration-500 transition-all">
                 Your Current Location
