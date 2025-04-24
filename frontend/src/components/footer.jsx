@@ -4,7 +4,7 @@ import { BackgroundBeams } from "./ui/background-beams";
 export default function Footer() {
   return (
     <footer className="relative antialiased text-gray-300 py-10 px-6 bg-neutral-950">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-8">
+      <div className="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8">
         <div>
           <div className="flex items-center space-x-2">
             <div className="bg-green-500 p-2 rounded-full">
@@ -48,7 +48,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        <div>
+        <div className="col-span-2 sm:col-span-1">
           <h4 className="text-white font-semibold mb-4">Delivery & Support</h4>
           <ul className="space-y-2 text-sm">
             <li>
@@ -95,7 +95,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        <div>
+        <div className="col-span-2 sm:col-span-1">
           <h4 className="text-white font-semibold mb-4">Contact Us</h4>
           <p className="text-green-400 font-semibold text-lg mb-4">
             1-800-MEDIDOOR

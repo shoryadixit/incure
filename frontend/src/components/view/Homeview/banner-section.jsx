@@ -76,11 +76,11 @@ export default function BannerSection() {
           <div className="flex items-center justify-center gap-4">
             <div className="flex flex-col md:flex-row items-center justify-center gap-4 w-full">
               <div className="flex flex-col md:flex-row w-full gap-4 md:items-center">
-                <div className="flex items-center justify-center gap-4">
+                <div className="flex items-center justify-center flex-wrap sm:flex-nowrap gap-4">
                   <div className="flex items-center justify-start relative">
                     <MotionInput
                       initial={{ width: "180px" }}
-                      whileFocus={{ width: "300px", scale: [1.05, 1] }}
+                      whileFocus={{ width: "280px", scale: [1.05, 1] }}
                       onBlur={(e) => {
                         e.target.animate(
                           [
@@ -198,12 +198,21 @@ export default function BannerSection() {
         </div>
       </div>
 
-      <div className="fixed bottom-4 left-4 bg-white p-4 rounded-lg shadow-lg max-w-md whitespace-break-spaces z-50">
+      <div className="w-20 h-20 group group-hover:w-full group-hover:h-fit fixed bottom-4 sm:left-4 bg-white p-4 rounded-lg shadow-lg max-w-xs md:max-w-md z-50">
         {location ? (
           <div className="flex flex-col gap-2">
-            <h3 className="font-semibold">📍 Your Current Location</h3>
-            <div className="text-sm text-gray-600">
-              {address && <p className="text-sm text-gray-700">📌 {address}</p>}
+            <h3 className="font-semibold">
+              📍{" "}
+              <span className="group-hover:block hidden delay-300 duration-500 transition-all">
+                Your Current Location
+              </span>
+            </h3>
+            <div className="text-sm text-gray-600 group-hover:block hidden delay-300 duration-500 transition-all">
+              {address && (
+                <p className="text-sm text-gray-700 whitespace-break-spaces">
+                  📌 {address}
+                </p>
+              )}
               <div className="flex items-center gap-2">
                 <span className="font-medium">Location Details:</span>
                 {location && (
